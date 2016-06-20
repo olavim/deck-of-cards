@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node client.js",
-    "build": "babel src -d lib"
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
