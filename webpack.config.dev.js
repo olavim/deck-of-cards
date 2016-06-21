@@ -3,12 +3,16 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-	devtool: 'source-map',
-	entry: ['babel-polyfill', './src/app.js'],
+	devtool: 'cheap-module-eval-source-map',
+	entry: [
+		'webpack-hot-middleware/client',
+		'babel-polyfill',
+		'./src/app.js'
+	],
 	output: {
 		path: path.join(__dirname, 'dist'),
 		publicPath: '/',
-		filename: 'app.[hash].js'
+		filename: 'app.js'
 	},
 	module: {
 		loaders: [
@@ -17,6 +21,7 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: [/node_modules/, /bower_components/],
 				query: {
+					cacheDirectory: true,
 					presets: ['es2015', 'stage-1', 'babel-preset-react']
 				}
 			},
@@ -46,39 +51,22 @@ module.exports = {
 			}
 		]
 	},
-	sassLoader: {
-		includePaths: [path.resolve(__dirname, "./assets")]
-	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'bower_components'],
 		extensions: ['', '.js', '.jsx']
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new HtmlWebpackPlugin({
-			title: 'Deck of Cards',
-			template: 'web/index.prod.html',
-			favicon: 'web/favicon.png',
-			inject: 'body'
+			title: 'Tuup',
+			template: 'web/index.dev.html',
+			favicon: 'web/favicon.png'
 		}),
-		new webpack.optimize.UglifyJsPlugin({
-			'mangle': false,
-			'compress': {
-				/* eslint-disable camelcase */
-				dead_code: true,  // discard unreachable code
-				unsafe: false, // some unsafe optimizations (see below)
-				unused: false, // drop unused variables/functions
-				hoist_vars: false, // hoist variable declarations
-				side_effects: false, // drop side-effect-free statements
-				global_defs: {} // glob
-				/* eslint-enable camelcase */
-			}
-		}),
-		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
 			__DEVELOPMENT__: process.env.NODE_ENV === 'development',
-			__DEVTOOLS__: false
+			__DEVTOOLS__: true
 		})
 	]
 };

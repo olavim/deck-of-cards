@@ -4,9 +4,11 @@
   "description": "Draw a random card from a deck. Suitable for drinking games.",
   "main": "client.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node client.js",
-    "build": "babel src -d build"
+    "test": "xo && echo \"Error: no test specified\" && exit 1",
+    "start": "node devServer.js",
+    "clean": "rimraf dist",
+    "build": "npm run build:webpack",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "node-sass": "^3.8.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "rimraf": "^2.5.2",
     "sass-loader": "^3.2.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
@@ -39,6 +42,7 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.10.1"
+    "babel-cli": "^6.10.1",
+    "xo": "^0.16.0"
   }
 }
