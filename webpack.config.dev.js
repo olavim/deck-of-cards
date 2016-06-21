@@ -2,11 +2,14 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	entry: [
-		'webpack-hot-middleware/client',
 		'babel-polyfill',
+		'webpack-hot-middleware/client',
 		'./src/app.js'
 	],
 	output: {
@@ -21,7 +24,6 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: [/node_modules/, /bower_components/],
 				query: {
-					cacheDirectory: true,
 					presets: ['es2015', 'stage-1', 'babel-preset-react']
 				}
 			},
@@ -30,13 +32,13 @@ module.exports = {
 				loaders: [
 					'style-loader',
 					'css-loader',
-					'autoprefixer-loader?browsers=last 2 version',
+					'postcss-loader',
 					'sass-loader'
 				]
 			},
 			{
 				test: /\.css$/,
-				loader: 'style-loader!css-loader'
+				loader: 'style-loader!css-loader!postcss-loader'
 			},
 			{
 				test: /\.(jpe?g|png|gif)$/i,
@@ -50,6 +52,12 @@ module.exports = {
 				loader: 'file-loader?name=assets/images/[name].[ext]'
 			}
 		]
+	},
+	sassLoader: {
+		includePaths: [path.resolve(__dirname, "./assets")]
+	},
+	postcss: function () {
+		return [precss(), autoprefixer({ browsers: ['last 2 versions'] })];
 	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'bower_components'],
