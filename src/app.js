@@ -10,5 +10,5 @@ ReactDOM.render(
         <DeckFrame />
         <InfoFrame />
     </div>,
-    document.getElementById('content')
+    document.getElementById('app')
 );

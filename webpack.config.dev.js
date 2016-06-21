@@ -8,7 +8,6 @@ var autoprefixer = require('autoprefixer');
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	entry: [
-		'babel-polyfill',
 		'webpack-hot-middleware/client',
 		'./src/app.js'
 	],
@@ -68,7 +67,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new HtmlWebpackPlugin({
-			title: 'Tuup',
+			title: 'Deck of Cards|dev',
 			template: 'web/index.dev.html',
 			favicon: 'web/favicon.png'
 		}),

@@ -8,7 +8,7 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
 	devtool: 'source-map',
-	entry: ['babel-polyfill', './src/app.js'],
+	entry: ['./src/app.js'],
 	output: {
 		path: path.join(__dirname, 'dist'),
 		publicPath: '/',
