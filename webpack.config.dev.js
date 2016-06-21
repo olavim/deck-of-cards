@@ -67,7 +67,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new HtmlWebpackPlugin({
-			title: 'Deck of Cards|dev',
+			title: 'Dev of Cards',
 			template: 'web/index.dev.html',
 			favicon: 'web/favicon.png'
 		}),
