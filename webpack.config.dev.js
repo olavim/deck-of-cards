@@ -8,7 +8,6 @@ var autoprefixer = require('autoprefixer');
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	entry: [
-		'babel-polyfill',
 		'webpack-hot-middleware/client',
 		'./src/app.js'
 	],
