@@ -6,11 +6,11 @@ import DeckFrame from './containers/DeckFrame';
 import InfoFrame from './containers/InfoFrame';
 
 ReactDOM.render(
-    <div>
-        <DeckFrame />
-        <InfoFrame />
-    </div>,
-    document.getElementById('app')
+	<div>
+		<DeckFrame />
+		<InfoFrame />
+	</div>,
+	document.getElementById('app')
 );
 
 if (module.hot) {

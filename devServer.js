@@ -18,7 +18,7 @@ app.get('*', function(req, res) {
 });
 
 var port = 8888;
-app.listen(port, 'localhost', function (err) {
+app.listen(port, 'localhost', function(err) {
 	if (err) {
 		console.log(err);
 		return;
