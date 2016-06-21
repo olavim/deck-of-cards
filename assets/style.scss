@@ -9,6 +9,6 @@
   height: 100%;
 }
 
-.frame:last-of-type {
+.frame:not(:first-child) {
   border-left: 1px solid #ccc;
 }
