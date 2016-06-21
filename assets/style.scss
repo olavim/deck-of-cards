@@ -1,9 +1,6 @@
-#frame-deck {
-  display: inline-block;
-  background-color: #f00;
-}
+@import 'reset';
 
-#frame-info {
+.frame {
   display: inline-block;
-  background-color: #0f0;
+  padding: 2em;
 }
