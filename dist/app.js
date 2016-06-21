@@ -18,6 +18,8 @@ var _InfoFrame2 = _interopRequireDefault(_InfoFrame);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require('../assets/style.scss');
+
 _reactDom2.default.render(_react2.default.createElement(
     'div',
     null,
