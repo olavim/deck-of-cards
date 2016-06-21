@@ -4,7 +4,7 @@ export default class InfoFrame extends React.Component {
     render() {
         return (
             <div id="frame-info">
-                Info
+                Info2
             </div>
         )
     }
