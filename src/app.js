@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import DeckFrame from './containers/DeckFrame';
+import InfoFrame from './containers/InfoFrame';
 
 ReactDOM.render(
-    <h1>Hello World!</h1>,
+    <div>
+        <DeckFrame />
+        <InfoFrame />
+    </div>,
     document.getElementById('content')
 );
