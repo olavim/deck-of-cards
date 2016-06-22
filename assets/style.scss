@@ -1,9 +1,14 @@
-#frame-deck {
+@import 'reset';
+
+.frame {
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
   display: inline-block;
-  background-color: #f00;
+  padding: 2em;
+  width: 50%;
+  height: 100%;
 }
 
-#frame-info {
-  display: inline-block;
-  background-color: #0f0;
+.frame:last-of-type {
+  border-left: 1px solid #ccc;
 }
