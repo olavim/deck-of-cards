@@ -1,6 +1,6 @@
 import React from 'react';
-import TabbedComponent from './TabbedComponent';
 import Tab from '../components/Tab';
+import TabbedComponent from './TabbedComponent';
 
 export default class InfoFrame extends React.Component {
 	render() {

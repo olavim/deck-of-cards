@@ -1,11 +1,15 @@
 import React from 'react';
 
-export default ({
-	children
-}) => {
-	return (
-		<div className="tab">
-			{children}
-		</div>
-	)
+export default class Tab extends React.Component {
+	static propTypes = {
+		children: React.PropTypes.element.isRequired
+	};
+
+	render() {
+		return (
+			<div className="tab">
+				{this.props.children}
+			</div>
+		);
+	}
 }
