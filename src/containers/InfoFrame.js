@@ -1,5 +1,6 @@
 import React from 'react';
-import Tab from '../components/Tab';
+import InfoDataTab from './InfoDataTab';
+import CardRulesTab from './CardRulesTab';
 import TabbedComponent from './TabbedComponent';
 
 export default class InfoFrame extends React.Component {
@@ -7,9 +8,9 @@ export default class InfoFrame extends React.Component {
 		return (
 			<div id="frame-info" className="frame">
 				<TabbedComponent>
-					<Tab title="Card Rules">Card Rules - content</Tab>
-					<Tab title="Categories">Categories - content</Tab>
-					<Tab title="Game Rules">Game Rules - content</Tab>
+					<CardRulesTab title="Card Rules" dataKey="cardRules" />
+					<InfoDataTab title="Categories" dataKey="categories" />
+					<InfoDataTab title="Game Rules" dataKey="gameRules" />
 				</TabbedComponent>
 			</div>
 		);

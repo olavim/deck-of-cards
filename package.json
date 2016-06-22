@@ -23,6 +23,7 @@
   "homepage": "https://github.com/tilastokeskus/deck-of-cards#readme",
   "dependencies": {
     "autoprefixer": "^6.3.6",
+    "axios": "^0.12.0",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
@@ -51,11 +52,22 @@
     "xo": "^0.16.0"
   },
   "xo": {
-    "envs": ["node", "browser", "es6"],
+    "envs": [
+      "node",
+      "browser",
+      "es6"
+    ],
     "esnext": true,
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "rules": {
-      "xo/filename-case": ["warn", {"case": "kebabCase"}],
+      "xo/filename-case": [
+        "warn",
+        {
+          "case": "kebabCase"
+        }
+      ],
       "react/display-name": 2,
       "react/jsx-no-duplicate-props": 2,
       "react/jsx-no-undef": 2,
@@ -63,8 +75,14 @@
       "react/jsx-uses-vars": 2,
       "react/no-danger": 2,
       "react/no-deprecated": 2,
-      "react/no-did-mount-set-state": [2, "allow-in-func"],
-      "react/no-did-update-set-state": [2, "allow-in-func"],
+      "react/no-did-mount-set-state": [
+        2,
+        "allow-in-func"
+      ],
+      "react/no-did-update-set-state": [
+        2,
+        "allow-in-func"
+      ],
       "react/no-direct-mutation-state": 2,
       "react/no-is-mounted": 2,
       "react/no-unknown-property": 2,
@@ -75,11 +93,25 @@
     "overrides": [
       {
         "files": "src/containers/*.js",
-        "rules": {"xo/filename-case": ["warn", {"case": "pascalCase"}]}
+        "rules": {
+          "xo/filename-case": [
+            "warn",
+            {
+              "case": "pascalCase"
+            }
+          ]
+        }
       },
       {
         "files": "src/components/*.js",
-        "rules": {"xo/filename-case": ["warn", {"case": "pascalCase"}]}
+        "rules": {
+          "xo/filename-case": [
+            "warn",
+            {
+              "case": "pascalCase"
+            }
+          ]
+        }
       }
     ]
   }

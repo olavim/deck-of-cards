@@ -1,5 +1,5 @@
 {
-  cardRules: [
+  "cardRules": [
     "Anna",
     "Ota",
     "1-2-3",
@@ -14,12 +14,12 @@
     "Huora",
     "Säe"
   ],
-  categories: [
+  "categories": [
     "Automerkit",
     "Pokemonit",
     "Videopelit"
   ],
-  gameRules: [
+  "gameRules": [
     "Nimet siirtyvät myötäpäivään; oma nimi on nyt vasemmalla puolella istuvan pelaajan nimi.",
     "Pitää puhua Mikki Hiiri -äänellä.",
     "Hampaat eivät saa näkyä."

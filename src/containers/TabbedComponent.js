@@ -1,5 +1,4 @@
 import React from 'react';
-import Tab from '../components/Tab';
 
 export default class TabbedComponent extends React.Component {
 	static propTypes = {
@@ -8,9 +7,9 @@ export default class TabbedComponent extends React.Component {
 			const prop = props[propName];
 
 			React.Children.forEach(prop, child => {
-				if (child.type !== Tab) {
+				if (!child.props.title) {
 					error = new Error(
-						`\`${componentName}\` only accepts children of type \`Tab\`. \` ${child.type.displayName} \` given.`
+						`\`${componentName}\` only accepts children with property \`title\``
 					);
 				}
 			});
@@ -34,7 +33,7 @@ export default class TabbedComponent extends React.Component {
 		let data = React.Children.map(this.props.children, child => {
 			return {
 				title: child.props.title,
-				content: child.props.children
+				content: child
 			}
 		});
 
@@ -53,7 +52,7 @@ export default class TabbedComponent extends React.Component {
 						})
 					}
 				</div>
-				<div className="tab-content">
+				<div className="tab-content" key={data[this.state.activeTab].title}>
 					{data[this.state.activeTab].content}
 				</div>
 			</div>
