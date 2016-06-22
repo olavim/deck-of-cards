@@ -8,7 +8,7 @@ export default class InfoDataTab extends Tab {
 		dataKey: React.PropTypes.string.isRequired
 	}
 
-	state = { data: [] };
+	state = {data: []};
 
 	constructor(props) {
 		super(props);
@@ -24,10 +24,10 @@ export default class InfoDataTab extends Tab {
 			<div>
 				{
 					this.state.data.map((value, index) => {
-						return <InputRow value={value} key={index} />
+						return <InputRow value={value} key={index} />;
 					})
 				}
 			</div>
-		)
+		);
 	}
 }

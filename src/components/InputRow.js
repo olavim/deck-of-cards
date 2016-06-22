@@ -10,6 +10,6 @@ export default class InputRow extends React.Component {
 			<div className="input-row">
 				<input type="text" defaultValue={this.props.value} />
 			</div>
-		)
+		);
 	}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class Tab extends React.Component {
-	displayName = "Tab";
+	displayName = 'Tab';
 
 	static propTypes = {
 		children: React.PropTypes.any

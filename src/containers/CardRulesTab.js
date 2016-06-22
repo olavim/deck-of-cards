@@ -15,10 +15,10 @@ export default class CardRulesTab extends InfoDataTab {
 								<div className="card-value">{this.cards[index]}</div>
 								<InputRow value={value} />
 							</div>
-						)
+						);
 					})
 				}
 			</div>
-		)
+		);
 	}
 }
