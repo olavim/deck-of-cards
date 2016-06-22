@@ -7,9 +7,9 @@ export default class InfoFrame extends React.Component {
 		return (
 			<div id="frame-info" className="frame">
 				<TabbedComponent>
-					<Tab title="Card Rules">Card Rules</Tab>
-					<Tab title="Categories">Categories</Tab>
-					<Tab title="Game Rules">Game Rules</Tab>
+					<Tab title="Card Rules">Card Rules - content</Tab>
+					<Tab title="Categories">Categories - content</Tab>
+					<Tab title="Game Rules">Game Rules - content</Tab>
 				</TabbedComponent>
 			</div>
 		);

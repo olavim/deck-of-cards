@@ -1,4 +1,10 @@
 @import 'reset';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
 
 .frame {
   border-bottom: 1px solid #ccc;
@@ -7,8 +13,34 @@
   padding: 2em;
   width: 50%;
   height: 100%;
+  vertical-align: top;
 }
 
 .frame:not(:first-child) {
   border-left: 1px solid #ccc;
+}
+
+.tabbed {
+  .tab-title {
+    display: inline-block;
+    padding: .8em 1.8em;
+    color: #555;
+    cursor: pointer;
+  }
+
+  .tab-title.active {
+    background-color: #e2832f;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+  }
+
+  .tab-title:not(.active):hover {
+    background-color: #ddd;
+  }
+
+  .tab-content {
+    padding: 2em 0;
+    border-top: 2px solid #888;
+  }
 }

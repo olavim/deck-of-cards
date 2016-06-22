@@ -19,14 +19,43 @@ export default class TabbedComponent extends React.Component {
 		}
 	};
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			activeTab: 0
+		}
+	}
+
+	changeTab(tabIndex) {
+		this.setState({activeTab: tabIndex});
+	}
+
 	render() {
-		React.Children.forEach(this.props.children, child => {
-			console.log(child.props.title);
+		let data = React.Children.map(this.props.children, child => {
+			return {
+				title: child.props.title,
+				content: child.props.children
+			}
 		});
 
 		return (
-			<div>
-				{this.props.children}
+			<div className="tabbed">
+				<div>
+					{
+						data.map((tab, index) => {
+							let isActive = this.state.activeTab === index;
+							let className = "tab-title" + (isActive ? " active" : "");
+							return (
+								<div className={className} key={index} onClick={this.changeTab.bind(this, index)}>
+									<span>{tab.title}</span>
+								</div>
+							)
+						})
+					}
+				</div>
+				<div className="tab-content">
+					{data[this.state.activeTab].content}
+				</div>
 			</div>
 		);
 	}

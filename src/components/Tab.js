@@ -2,12 +2,12 @@ import React from 'react';
 
 export default class Tab extends React.Component {
 	static propTypes = {
-		children: React.PropTypes.element.isRequired
+		children: React.PropTypes.any.isRequired
 	};
 
 	render() {
 		return (
-			<div className="tab">
+			<div>
 				{this.props.children}
 			</div>
 		);
