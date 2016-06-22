@@ -4,6 +4,7 @@
   "description": "Draw a random card from a deck. Suitable for drinking games.",
   "main": "client.js",
   "scripts": {
+    "lint": "xo",
     "test": "xo && echo \"Error: no test specified\" && exit 1",
     "start": "node devServer.js",
     "clean": "rimraf dist",
