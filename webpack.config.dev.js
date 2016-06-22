@@ -1,9 +1,10 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const path = require('path');
 
-var precss = require('precss');
-var autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
@@ -53,10 +54,10 @@ module.exports = {
 		]
 	},
 	sassLoader: {
-		includePaths: [path.resolve(__dirname, "./assets")]
+		includePaths: [path.resolve(__dirname, './assets')]
 	},
-	postcss: function () {
-		return [precss(), autoprefixer({ browsers: ['last 2 versions'] })];
+	postcss: () => {
+		return [precss(), autoprefixer({browsers: ['last 2 versions']})];
 	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'bower_components'],

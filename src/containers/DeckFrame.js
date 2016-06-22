@@ -6,6 +6,6 @@ export default class DeckFrame extends React.Component {
 			<div id="frame-deck">
 				Deck
 			</div>
-		)
+		);
 	}
 }

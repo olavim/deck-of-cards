@@ -30,6 +30,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "babel-register": "^6.9.0",
     "css-loader": "^0.23.1",
+    "eslint-plugin-react": "^5.2.2",
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.21.0",
     "node-sass": "^3.8.0",
@@ -47,5 +48,38 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "xo": "^0.16.0"
+  },
+  "xo": {
+    "envs": ["node", "browser", "es6"],
+    "esnext": true,
+    "plugins": ["react"],
+    "rules": {
+      "xo/filename-case": ["warn", {"case": "kebabCase"}],
+      "react/display-name": 2,
+      "react/jsx-no-duplicate-props": 2,
+      "react/jsx-no-undef": 2,
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/no-danger": 2,
+      "react/no-deprecated": 2,
+      "react/no-did-mount-set-state": [2, "allow-in-func"],
+      "react/no-did-update-set-state": [2, "allow-in-func"],
+      "react/no-direct-mutation-state": 2,
+      "react/no-is-mounted": 2,
+      "react/no-unknown-property": 2,
+      "react/no-render-return-value": 2,
+      "react/prop-types": 2,
+      "react/react-in-jsx-scope": 2
+    },
+    "overrides": [
+      {
+        "files": "src/containers/*.js",
+        "rules": {"xo/filename-case": ["warn", {"case": "pascalCase"}]}
+      },
+      {
+        "files": "src/components/*.js",
+        "rules": {"xo/filename-case": ["warn", {"case": "pascalCase"}]}
+      }
+    ]
   }
 }

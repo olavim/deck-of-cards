@@ -6,6 +6,6 @@ export default class InfoFrame extends React.Component {
 			<div id="frame-info">
 				Info
 			</div>
-		)
+		);
 	}
 }

@@ -1,10 +1,11 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const path = require('path');
+
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // css loaders
-var precss = require('precss');
-var autoprefixer = require('autoprefixer');
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	devtool: 'source-map',
@@ -51,10 +52,10 @@ module.exports = {
 		]
 	},
 	sassLoader: {
-		includePaths: [path.resolve(__dirname, "./assets")]
+		includePaths: [path.resolve(__dirname, './assets')]
 	},
-	postcss: function () {
-		return [precss(), autoprefixer({ browsers: ['last 2 versions'] })];
+	postcss: () => {
+		return [precss(), autoprefixer({browsers: ['last 2 versions']})];
 	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'bower_components'],
@@ -70,13 +71,13 @@ module.exports = {
 			inject: 'body'
 		}),
 		new webpack.optimize.UglifyJsPlugin({
-			'mangle': false,
-			'compress': {
+			mangle: false,
+			compress: {
 				/* eslint-disable camelcase */
 				dead_code: true,  // discard unreachable code
 				unsafe: false, // some unsafe optimizations (see below)
-				unused: false, // drop unused variables/functions
-				hoist_vars: false, // hoist variable declarations
+				unused: false, // drop unused constiables/functions
+				hoist_consts: false, // hoist constiable declarations
 				side_effects: false, // drop side-effect-free statements
 				global_defs: {} // glob
 				/* eslint-enable camelcase */
