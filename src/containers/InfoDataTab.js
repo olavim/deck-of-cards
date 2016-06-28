@@ -6,17 +6,18 @@ import InputRow from '../components/InputRow';
 export default class InfoDataTab extends Tab {
 	static propTypes = {
 		dataKey: React.PropTypes.string.isRequired
-	}
+	};
 
 	state = {data: []};
 
 	constructor(props) {
 		super(props);
-		api.getInfoData().then(response => {
-			this.setState({data: response.data[props.dataKey]});
-		}).catch(err => {
-			console.log(err);
-		});
+		this.fetchData();
+	}
+
+	async fetchData() {
+		let data = (await api.getInfoData()).data;
+		this.setState({data: data[this.props.dataKey]});
 	}
 
 	render() {

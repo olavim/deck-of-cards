@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import DeckFrame from './containers/DeckFrame';
 import InfoFrame from './containers/InfoFrame';
 
-require('../assets/style.scss');
+require('styles/style.scss');
 
 ReactDOM.render(
 	<div>
 		<DeckFrame />
 		<InfoFrame />
 	</div>,
-	document.getElementById('app')
+	document.getElementById('content')
 );
 
-if (module.hot) {
+if (__DEV__ && module.hot) {
 	module.hot.accept();
 }
