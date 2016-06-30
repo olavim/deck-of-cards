@@ -9,7 +9,10 @@ export default class InputRow extends React.Component {
 	render() {
 		return (
 			<div className="input-row">
-				<AutosizeTextarea defaultValue={this.props.value} />
+				{this.props.children}
+				<div className="input-div">
+					<AutosizeTextarea defaultValue={this.props.value} />
+				</div>
 			</div>
 		);
 	}

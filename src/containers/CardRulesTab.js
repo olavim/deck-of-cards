@@ -11,10 +11,9 @@ export default class CardRulesTab extends InfoDataTab {
 				{
 					this.state.data.map((value, index) => {
 						return (
-							<div key={index}>
-								<div className="card-value">{this.cards[index]}</div>
-								<InputRow value={value} />
-							</div>
+							<InputRow value={value} key={index}>
+								<div className="card-value"><div>{this.cards[index]}</div></div>
+							</InputRow>
 						);
 					})
 				}

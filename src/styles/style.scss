@@ -51,31 +51,43 @@ html {
 }
 
 .input-row {
-  width: auto;
-  overflow: hidden;
-  padding: 8px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .5em;
 
-  textarea {
-    font-size: 16px;
-    color: #444;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    height: auto;
-    resize: none;
-    overflow-y: hidden;
+  .card-value {
+    cursor: default;
+    position: relative;
+    width: 2.1em;
+    color: #eee;
+    font-weight: bold;
+    align-items: stretch;
+    border-radius: 6px;
+    background-color: #666;
+
+    div {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      text-align: center;
+      transform: translateY(-50%);
+    }
   }
-}
 
-.card-value {
-  float: left;
-  height: 30px;
-  width: 26px;
-  margin: 5px 0.5em 0 0;
-  line-height: 30px;
-  text-align: center;
-  color: #888;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-weight: bold;
+  .input-div {
+    padding: 8px;
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      color: #444;
+      border: none;
+      height: auto;
+      resize: none;
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+    }
+  }
 }
