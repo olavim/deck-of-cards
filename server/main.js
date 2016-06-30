@@ -29,7 +29,7 @@ if (config.env === 'development') {
 
 	app.use(express.static(paths.src('static')));
 	app.get('/infoData.json', (req, res) => {
-		res.sendfile(paths.base('infoData.json'));
+		res.sendFile(paths.base('infoData.json'));
 	})
 } else {
 	debug('Server is running in production environment');
