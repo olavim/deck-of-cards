@@ -1,27 +1,38 @@
 {
-  "cardRules": [
-    "Anna",
-    "Ota",
-    "1-2-3",
-    "Vesiputous",
-    "Hitler",
-    "Tarina",
-    "7",
-    "Kategoria",
-    "Sääntö",
-    "Kysymysmestari",
-    "Peukkumestari",
-    "Huora",
-    "Säe"
-  ],
-  "categories": [
-    "Automerkit",
-    "Pokemonit",
-    "Videopelit"
-  ],
-  "gameRules": [
-    "Nimet siirtyvät myötäpäivään; oma nimi on nyt vasemmalla puolella istuvan pelaajan nimi.",
-    "Pitää puhua Mikki Hiiri -äänellä.",
-    "Hampaat eivät saa näkyä."
+  "tabs": [
+    {
+      "title": "Card Rules",
+      "data": [
+        "Anna",
+        "Ota",
+        "1-2-3",
+        "Vesiputous",
+        "Hitler",
+        "Tarina",
+        "7",
+        "Kategoria",
+        "Sääntö",
+        "Kysymysmestari",
+        "Peukkumestari",
+        "Huora",
+        "Säe"
+      ]
+    },
+    {
+      "title": "Categories",
+      "data": [
+        "Automerkit",
+        "Pokemonit",
+        "Videopelit"
+      ]
+    },
+    {
+      "title": "Game rules",
+      "data": [
+        "Nimet siirtyvät myötäpäivään; oma nimi on nyt vasemmalla puolella istuvan pelaajan nimi.",
+        "Pitää puhua Mikki Hiiri -äänellä.",
+        "Hampaat eivät saa näkyä."
+      ]
+    }
   ]
 }

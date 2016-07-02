@@ -1,0 +1,18 @@
+.tab {
+  font-size: 14px;
+  display: inline-block;
+  padding: .8em 1.8em;
+  color: #fff;
+  background-color: #555;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #58C8F1;
+  text-shadow: 0 1px 3px #555;
+  cursor: default;
+}
+
+.tab:not(.active):hover {
+  background-color: #666;
+}

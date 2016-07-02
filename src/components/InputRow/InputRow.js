@@ -1,5 +1,6 @@
 import React from 'react';
 import AutosizeTextarea from 'react-autosize-textarea';
+import classes from './InputRow.scss';
 
 export default class InputRow extends React.Component {
 	static propTypes = {
@@ -8,9 +9,9 @@ export default class InputRow extends React.Component {
 
 	render() {
 		return (
-			<div className="input-row">
+			<div className={classes['input-row']}>
 				{this.props.children}
-				<div className="input-div">
+				<div className={classes['input-div']}>
 					<AutosizeTextarea defaultValue={this.props.value} />
 				</div>
 			</div>

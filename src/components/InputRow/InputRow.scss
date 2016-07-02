@@ -1,0 +1,27 @@
+.input-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: .5em;
+
+  .input-div {
+    padding: 8px;
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      color: #444;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      height: auto;
+      resize: none;
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+    }
+  }
+}
+
+.input-row:hover textarea {
+  border-bottom: 1px solid #58C8F1;
+}
