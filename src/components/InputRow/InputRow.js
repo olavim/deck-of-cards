@@ -4,7 +4,9 @@ import classes from './InputRow.scss';
 
 export default class InputRow extends React.Component {
 	static propTypes = {
-		value: React.PropTypes.string
+		value: React.PropTypes.string,
+		focus: React.PropTypes.bool,
+		onBlur: React.PropTypes.func
 	};
 
 	render() {
@@ -12,7 +14,9 @@ export default class InputRow extends React.Component {
 			<div className={classes['input-row']}>
 				{this.props.children}
 				<div className={classes['input-div']}>
-					<AutosizeTextarea defaultValue={this.props.value} />
+					<AutosizeTextarea autoFocus={this.props.focus}
+					                  defaultValue={this.props.value}
+					                  onBlur={(e) => this.props.onBlur.bind(undefined, e)()} />
 				</div>
 			</div>
 		);

@@ -12,7 +12,7 @@ export default class CardRulesTab extends InfoDataTab {
 				{
 					this.props.data.map((value, index) => {
 						return (
-							<InputRow value={value} key={index}>
+							<InputRow value={value} key={index} onBlur={this.props.onEditRow.bind(undefined, index)}>
 								<Card label={this.cards[index]} />
 							</InputRow>
 						);

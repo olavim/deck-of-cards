@@ -6,14 +6,10 @@ import Tabs, {Tab, TabTitle, TabContent} from '../components/Tabs';
 import api from '../api';
 
 export default class InfoFrame extends React.Component {
-	state = {
-		tabs: [
-			{
-				title: '',
-				data: []
-			}
-		]
-	};
+	state = {tabs: [{
+		title: '',
+		data: []
+	}]};
 
 	constructor(props) {
 		super(props);
@@ -25,6 +21,28 @@ export default class InfoFrame extends React.Component {
 		this.setState({tabs: data.tabs});
 	}
 
+	async editRowData(tabIndex, rowIndex, e) {
+		let newData = e.target.value;
+		let response = await api.editInfoData(tabIndex, rowIndex, newData);
+
+		let newState = Object.assign({}, this.state);
+		if (newData) {
+			newState.tabs[tabIndex].data[rowIndex] = newData;
+		} else if (tabIndex !== 0) {
+			newState.tabs[tabIndex].data.splice(rowIndex, 1);
+		}
+
+		this.setState(newState);
+	}
+
+	async addRow(tabIndex) {
+		let response = await api.addInfoData(tabIndex);
+
+		let newState = Object.assign({}, this.state);
+		newState.tabs[tabIndex].data.push('');
+		this.setState(newState);
+	}
+
 	render() {
 		const tabs = this.state.tabs;
 
@@ -33,12 +51,18 @@ export default class InfoFrame extends React.Component {
 				<Tabs>
 					<Tab>
 						<TabTitle>{tabs[0].title}</TabTitle>
-						<TabContent><CardRulesTab data={tabs[0].data} /></TabContent>
+						<TabContent>
+							<CardRulesTab data={tabs[0].data} onEditRow={this.editRowData.bind(this, 0)} />
+						</TabContent>
 					</Tab>
 					{tabs.slice(1).map((tab, i) => (
 						<Tab key={i}>
 							<TabTitle>{tab.title}</TabTitle>
-							<TabContent><InfoDataTab data={tab.data} /></TabContent>
+							<TabContent>
+								<InfoDataTab data={tab.data}
+		                         onEditRow={this.editRowData.bind(this, i+1)}
+		                         onAddRow={this.addRow.bind(this, i+1)} />
+							</TabContent>
 						</Tab>
 					))}
 				</Tabs>
