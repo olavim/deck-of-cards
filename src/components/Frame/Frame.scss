@@ -1,0 +1,11 @@
+.frame {
+  display: inline-block;
+  padding: 2em;
+  width: 50%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.frame:not(:first-child) {
+  border-left: 1px solid #ccc;
+}

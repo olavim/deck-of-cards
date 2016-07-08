@@ -1,11 +1,12 @@
 import React from 'react';
+import Frame from '../components/Frame';
 
 export default class DeckFrame extends React.Component {
 	render() {
 		return (
-			<div id="frame-deck" className="frame">
+			<Frame id="frame-deck">
 				Deck
-			</div>
+			</Frame>
 		);
 	}
 }

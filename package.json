@@ -87,6 +87,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "babel-register": "^6.9.0",
     "better-npm-run": "0.0.9",
+    "body-parser": "^1.15.2",
     "css-loader": "^0.23.1",
     "cssnano": "^3.7.1",
     "debug": "^2.2.0",
@@ -99,10 +100,12 @@
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
     "react": "^15.1.0",
+    "react-autosize-textarea": "^0.3.1",
     "react-dom": "^15.1.0",
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0",
@@ -113,11 +116,22 @@
     "xo": "^0.16.0"
   },
   "xo": {
-    "envs": ["node", "browser", "es6"],
+    "envs": [
+      "node",
+      "browser",
+      "es6"
+    ],
     "esnext": true,
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "rules": {
-      "xo/filename-case": ["warn", {"case": "kebabCase"}],
+      "xo/filename-case": [
+        "warn",
+        {
+          "case": "kebabCase"
+        }
+      ],
       "react/display-name": 2,
       "react/jsx-no-duplicate-props": 2,
       "react/jsx-no-undef": 2,
@@ -125,8 +139,14 @@
       "react/jsx-uses-vars": 2,
       "react/no-danger": 2,
       "react/no-deprecated": 2,
-      "react/no-did-mount-set-state": [2, "allow-in-func"],
-      "react/no-did-update-set-state": [2, "allow-in-func"],
+      "react/no-did-mount-set-state": [
+        2,
+        "allow-in-func"
+      ],
+      "react/no-did-update-set-state": [
+        2,
+        "allow-in-func"
+      ],
       "react/no-direct-mutation-state": 2,
       "react/no-is-mounted": 2,
       "react/no-unknown-property": 2,
@@ -138,13 +158,23 @@
       {
         "files": "src/containers/*.js",
         "rules": {
-          "xo/filename-case": ["warn", {"case": "pascalCase"}]
+          "xo/filename-case": [
+            "warn",
+            {
+              "case": "pascalCase"
+            }
+          ]
         }
       },
       {
         "files": "src/components/*.js",
         "rules": {
-          "xo/filename-case": ["warn", {"case": "pascalCase"}]
+          "xo/filename-case": [
+            "warn",
+            {
+              "case": "pascalCase"
+            }
+          ]
         }
       }
     ]

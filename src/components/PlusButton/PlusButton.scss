@@ -1,0 +1,40 @@
+.plusButton {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px solid rgb(82, 163, 241);
+  padding: .5em 0;
+  background-color: rgb(88,200,241);
+  padding-left: 2.5em;
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 1.5em;
+    color: #fff;
+  }
+}
+
+.plusButton::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 2.5em;
+  height: 100%;
+  background-image: url('../../static/images/plus.svg');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-right: 1px solid rgb(129, 207, 241);
+  background-color: rgb(90, 188, 230);
+}
+
+.plusButton:hover {
+  background-color: rgb(91, 204, 246);
+}
+
+.plusButton:hover::before {
+  background-color: rgb(89, 195, 236);
+}

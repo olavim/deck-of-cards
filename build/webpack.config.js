@@ -85,8 +85,51 @@ webpackConfig.module.loaders = [
 
 const BASE_CSS_LOADER = 'css?sourceMap&-minimize';
 
+const CSS_MODULE_PATHS = [];
+
+if (config.compiler_css_modules) {
+	CSS_MODULE_PATHS.push(
+		paths.src().replace(/[\^\$\.\*\+\-\?\=\!\:\|\\\/\(\)\[\]\{\}\,]/g, '\\$&')
+	)
+}
+
+const isUsingCSSModules = !!CSS_MODULE_PATHS.length;
+const cssModulesRegex = new RegExp(`(${CSS_MODULE_PATHS.join('|')})`);
+
+if (isUsingCSSModules) {
+	const cssModulesLoader = [
+		BASE_CSS_LOADER,
+		'modules',
+		'importLoaders=1',
+		'localIdentName=[name]__[local]___[hash:base64:5]'
+	].join('&');
+
+	webpackConfig.module.loaders.push({
+		test: /\.scss$/,
+		include: cssModulesRegex,
+		loaders: [
+			'style',
+			cssModulesLoader,
+			'postcss',
+			'sass?sourceMap'
+		]
+	});
+
+	webpackConfig.module.loaders.push({
+		test: /\.css$/,
+		include: cssModulesRegex,
+		loaders: [
+			'style',
+			cssModulesLoader,
+			'postcss'
+		]
+	})
+}
+
+const excludeCSSModules = isUsingCSSModules ? cssModulesRegex : false;
 webpackConfig.module.loaders.push({
 	test: /\.scss$/,
+	exclude: excludeCSSModules,
 	loaders: [
 		'style',
 		BASE_CSS_LOADER,
@@ -97,6 +140,7 @@ webpackConfig.module.loaders.push({
 
 webpackConfig.module.loaders.push({
 	test: /\.css$/,
+	exclude: excludeCSSModules,
 	loaders: [
 		'style',
 		BASE_CSS_LOADER,
